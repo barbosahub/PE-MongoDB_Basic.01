@@ -8,13 +8,13 @@
 
 
 <p align="left">
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/create.JPG" width="650" alt="accessibility text">
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/insert.JPG" width="650" alt="accessibility text">
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/update.JPG" width="650" alt="accessibility text">
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/updateinsert.JPG" width="650" alt="accessibility text">
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/delete" width="650" alt="accessibility text">
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/coordinates.JPG" width="650" alt="accessibility text">
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/table.JPG" width="350" alt="accessibility text">
+  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/create.JPG" width="650">
+  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/insert.JPG" width="650">
+  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/update.JPG" width="650">
+  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/updateinsert.JPG" width="650">
+  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/delete" width="650">
+  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/coordinates.JPG" width="650">
+  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/table.JPG" width="350">
 </p>
 
 ## Sobre
