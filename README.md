@@ -20,7 +20,7 @@
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/delete.JPG" width="650">
   <br><span> Realizando busca por proximidade com coordinates </span><br>
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/coordinates.JPG" width="650">
-  <br><span> Collection </span><br>
+  <br><span> Diagram</span><br>
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/table.JPG" width="350">
 </p>
 

@@ -1,201 +1,216 @@
-------------------  CAMPOS UTILIZADOS NO EXEMPLO
+//  Manual: https://docs.mongodb.com/manual
 
--- SERIAL       (PREENCHE INTEIRO AUTO-INCREMENT)
--- VARCHAR      (PREENCHE APENAS OS BITS DIGITADOS)
--- CHAR         (PREENCHE TODOS OS BITS, ATÉ OS NÃO DIGITADOS COMO "VAZIO")
--- TEXT         (PREENCHE TEXTO)
--- INTEGER      (PREENCHE INTEIRO)
--- NUMERIC      (PREENCHE NUMÉRICO DE ACORDO COM AS CASAS DECIMAIS)
--- BOOLEAN      (PREENCHE TRUE OU FALSE)
--- DATE         (PREENCHE DATA)
--- TIME         (PREENCHE HORA)
--- TIMESTAMP    (PREENCHE DATA E HORA)
+/*************************************  CREATE COLLECTION   */
+/*  SQL: Seria necessário realizar um CREATE TABLE  passsando os parametros e tipo de dados  */
+db.createCollection("alunos");
 
------------------- CRIAÇÃO DA TABELA ALUNO
-CREATE TABLE ALUNO(
-	ID SERIAL,
-	NOME VARCHAR(255),
-	CPF CHAR(11),
-	OBS TEXT,
-	IDADE INTEGER,
-	DINHEIRO NUMERIC(10,2),
-	ALTURA REAL,
-	ATIVO BOOLEAN,
-	DATA_NASCIMENTO DATE,
-	HORA_AULA TIME,
-	MATRICULADO TIMESTAMP
+/*************************************  INSERT COLLECTION   */
+/*  SQL: Seria necessário realizar o CREATE TABLE de tabela de ALUNO,CURSO,HABILIDADE,NOTAS e Realizar o insert em todas conforme os Id's  */
+db.alunos.insert(
+    {
+    "nome" : "Rui Barbosa",
+    "data_nascimento" : new Date("1997-08-08"),
+    "curso" : {
+        "nome" : "Engenharia de Software"
+    },
+    "notas" : [10.0 , 9.0 , 8.5],
+    "habilidades" : [
+        {
+        "nome" : "inglês",
+        "nivel" : "intermediario"
+        },
+        {
+        "nome" : "mongodb",
+        "nivel" : "basico"
+        }
+    ]
+    }
 );
 
------------------- INSERT NA TABELA ALUNO
-INSERT INTO ALUNO (
-    NOME,
-    CPF,
-    OBS,
-    IDADE,
-    DINHEIRO,
-    ALTURA,
-    ATIVO,
-    DATA_NASCIMENTO,
-    HORA_AULA,
-    MATRICULADO)
-VALUES (
-    'RUI',
-    '1112223344',
-    'LOREM IPSUM',
-    23,
-    1000.00,
-    1.73,
-    TRUE,
-    '1997-08-08',
-    '16:30:00',
-    '2020-12-20 16:30:00'
-    );
-INSERT INTO ALUNO (
-    NOME,
-    CPF,
-    OBS,
-    IDADE,
-    DINHEIRO,
-    ALTURA,
-    ATIVO,
-    DATA_NASCIMENTO,
-    HORA_AULA,
-    MATRICULADO)
-VALUES (
-    'JULIA',
-    '99988877744',
-    'LOREM IPSUM',
-    23,
-    1000.00,
-    1.50,
-    TRUE,
-    '1997-01-03',
-    '16:50:00',
-    '2020-12-20 16:50:00'
-    );
-
------------------- SELECT NA TABELA ALUNO
-SELECT * FROM
-    ALUNO;
-
------------------- UPDATE NA TABELA ALUNO
-UPDATE
-    ALUNO
-SET
-    NOME = 'RUI BARBOSA'
-WHERE
-    ID=1;
-
------------------- DELETE NA TABELA ALUNO
-DELETE FROM
-    ALUNO
-WHERE
-    ID = 1;
-
------------------- SELECT NA TABELA ALUNO COM LIKE &  NOT LIKE
-SELECT * FROM
-    ALUNO
-WHERE
-    NOME LIKE '_UI';
-
-SELECT * FROM
-    ALUNO
-WHERE
-    NOME NOT LIKE '_UI';
-
-SELECT * FROM
-    ALUNO
-WHERE
-    NOME LIKE '%IA';
-
------------------- CRIAÇÃO DA TABELA CURSO PK NOT NULL
--- CREATE TABLE CURSO (
---     ID INTEGER PRIMARY KEY ,
---     NOME VARCHAR(255) NOT NULL
--- );
---
--- INSERT INTO CURSO VALUES (1,'ALURA - PSQL');
--- INSERT INTO CURSO VALUES (1,'ALURA - PSQL');
---
--- SELECT * FROM CURSO;
-
------------------- CRIAÇÃO DA TABELA UTILIZANDO FK
--- DROP TABLE ALUNO;
-CREATE TABLE departamentos (
-    id SERIAL PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL
-);
-CREATE TABLE funcionarios (
-    id SERIAL PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL,
-    departamento_id INTEGER,
-    FOREIGN KEY (departamento_id) REFERENCES departamentos (id)
+db.alunos.insert(
+    {
+        "nome" : "Daniela",
+        "data_nascimento" : new Date("1996-05-18T16:00:00Z"),
+        "curso" : {
+            "nome" : "Medicina"
+        },
+        "habilidades" : [
+            {
+                "nome" : "inglês",
+                "nivel" : "avancado"
+            }
+        ]
+    }
 );
 
-INSERT INTO DEPARTAMENTOS (NOME) VALUES ('TECNOLOGIA');
-INSERT INTO DEPARTAMENTOS (NOME) VALUES ('OPERACAO');
-SELECT * FROM DEPARTAMENTOS;
 
-INSERT INTO FUNCIONARIOS (NOME,DEPARTAMENTO_ID) VALUES ('RUI BARBOSA',1);
-INSERT INTO FUNCIONARIOS (NOME,DEPARTAMENTO_ID) VALUES ('JULIA FERREIRA',1);
-INSERT INTO FUNCIONARIOS (NOME,DEPARTAMENTO_ID) VALUES ('LUCAS COSTA',2);
-SELECT * FROM FUNCIONARIOS;
-
------------------- SELECT COM INNER JOIN
-SELECT
-    F.nome AS NOME,
-    D.nome AS Departamento
-FROM
-    FUNCIONARIOS F
-INNER JOIN
-    DEPARTAMENTOS D
-on f.departamento_id = d.id;
-
------------------- CRATE TABLE COM CASCADE PARA DELETE CONFORME ARVORE DE INSERTS
--- CASO TIVER EM DIVERSAS TABELAS DIFERENTES, O CASCADE ALTERA EM TODAS OU REMOVE DE TODAS.
-CREATE TABLE ALUNO_CURSO(
-  ALUNO_ID INTEGER,
-  CURSO_ID INTEGER,
-  PRIMARY KEY (ALUNO_ID,CURSO_ID),
-  FOREIGN KEY (ALUNO_ID)
-    REFERENCES ALUNO(ID)
-    ON DELETE CASCADE
-);
-CREATE TABLE ALUNO (
-  ID SERIAL PRIMARY KEY,
-  NOME varchar(255) NOT NULL
+db.alunos.insert(
+    {
+        "nome" : "Fernando",
+        "data_nascimento" : new Date("1994-03-12T00:00:00Z"),
+        "notas": [10.0, 4.5, 7],
+        "curso" : {
+            "nome" : "Sistemas da informacao"
+        },
+    }
 );
 
-SELECT * FROM ALUNO_CURSO;
-SELECT * FROM ALUNO;
+/*************************************  SELECT COLLECTION   */
+/*  Realizando consulta geral   */
+/*  SQL: Seria necessário realizar um SELECT * FROM  */
+db.alunos.find();
 
-INSERT INTO  ALUNO (NOME) VALUES ('RUI BARBOSA');
-INSERT INTO  ALUNO (NOME) VALUES ('PEDRO PAULO');
+/*  Realizando consulta filtrando por nome do aluno   */
+/*  SQL: Seria necessário realizar um SELECT * FROM WHERE NOME = "RUI BARBOSA" com joins nas tabelas */
+db.alunos.find(
+    {
+        nome:"Rui Barbosa"
+    }
+);
 
-INSERT INTO  ALUNO_CURSO (ALUNO_ID, CURSO_ID) VALUES (1,1);
-INSERT INTO  ALUNO_CURSO (ALUNO_ID, CURSO_ID) VALUES (2,1);
+/*  Realizando consulta filtrando por habilidade em ingles   */
+db.alunos.find(
+    {
+        "habilidades.nome":"inglês"
+    }
+);
 
-DELETE FROM ALUNO WHERE ID = 1;
+/*  Realizando consulta filtrando por nome e habilidade em ingles   */
+db.alunos.find(
+    {
+        "nome": "Rui Barbosa",
+        "habilidades.nome":"inglês"
+    }
+);
 
-UPDATE ALUNO SET NOME = 'PEDRO' WHERE ID = 2;
+/*  Realizando consulta filtrando com clausula de OR   */
+db.alunos.find({
+    $or : [
+        {"curso.nome" : "Medicina"},
+        {"curso.nome" : "Engenharia de Software"}
+    ]}
+);
 
------------------- SELECT COM LIMITE (Equivalente ao TOP)
-SELECT * FROM ALUNO LIMIT  1;
+/*  Realizando consulta filtrando com clausula de OR & AND  */
+db.alunos.find({
+    $or : [
+        {"curso.nome" : "Medicina"},
+        {"curso.nome" : "Engenharia de Software"}
+    ],
+        "nome" : "Daniela"
+    }
+);
+/*  Realizando consulta filtrando com clausula de OR & AND  */
+db.alunos.find({
+    "curso.nome" : { $in : ["Medicina",
+                            "Engenharia de Software"]}
+});
+
+/*  Realizando consulta filtrando > 8.5  */
+db.alunos.find({
+    "notas" : {$gt : 8.5}
+});
+
+/*  Realizando consulta TOP 1 filtrando > 8.5  */
+db.alunos.findOne({
+    "notas" : {$gt : 8.5}
+});
+
+/*  Realizando consulta TOP 1 filtrando < 8.5  */
+db.alunos.find({"notas":{$lt:8.5}});
+
+/*  Realizando consulta order by asc ou desc  */
+db.alunos.find().sort({"nome" : 1});
+db.alunos.find().sort({"nome" : -1});
+
+/*  Realizando consulta ordenado e limitado em apenas 1  */
+db.alunos.find().sort({"nome" : 1}).limit(1);
 
 
-------------------  Funções de agregação
+/*************************************  UPDATE COLLECTION  */
+/*  SQL: Seria necessário realizar um UPDATE SET NOME = "Sistemas da Informacao" WHERE NOME = "Sistemas da informacao"  */
+db.alunos.update(
+    {"curso.nome" : "Sistemas da informacao"},
+    {
+        $set : {
+            "curso.nome" : "Sistemas da Informacao"
+        }
+    }
+);
 
--- COUNT    - RETORNA A QUANTIDADE DE REGISTOS
--- SUM      - RETORNA A SOMA
--- MAX      - RETORNO O VALOR MAIOR
--- MIN      - RETORNA O VALOR MENOR
--- AVG      - RETORNA MEDIA
+db.alunos.update(
+    {"_id" : ObjectId("5fe51507ca5ac03ebc8519bb")},
+    {
+        $push : {
+            "notas" : "8.5"
+        }
+    }
+);
 
-select count(ID) from aluno;
-select sum(ID) from aluno;
-select max(id) from aluno;
-select min(id) from aluno;
-select avg(id) from aluno;
+/*  SQL: Seria necessário realizar um DELETE FROM passando o Id */
+db.alunos.remove({
+    "_id" : ObjectId("5fe5152cca5ac03ebc8519bd")
+})
 
-select NOME,count(ID) as qtd from aluno
-group by NOME having count(id) < 5;
+
+
+
+
+/*************************************  FIND LAT LONG   */
+db.alunos.update(
+    {"nome" : "Rui Barbosa"},
+    {
+        $set : {
+        localizacao : {
+            "endereco" : "Rua Vergueiro, 3185",
+            "cidade" : "São Paulo",
+            "coordinates" : [-23.858213,-46.622356],
+            "type" : "Point"
+        }
+      }
+    }
+);
+db.alunos.update(
+    {"nome" : "Daniela"},
+    {
+        $set : {
+            localizacao : {
+            "endereco" : "Rua Vergueiro, 3244",
+            "cidade" : "São Paulo",
+            "coordinates" : [-28.469080,-52.205059],
+            "type" : "Point"
+            }
+        }
+    }
+);
+db.alunos.update(
+    {"nome" : "Fernando"},
+    {
+        $set : {
+            localizacao : {
+            "endereco" : "Avenida Paulista",
+            "cidade" : "São Paulo",
+            "coordinates" : [-23.563210,-46.654251],
+            "type" : "Point"
+            }
+        }
+    }
+);
+
+db.alunos.createIndex({
+    localizacao : "2dsphere"
+});
+
+db.alunos.aggregate([
+{
+    $geoNear : {
+        near : {
+            coordinates: [-23.5640265, -46.6527128],
+            type : "Point"
+        },
+        distanceField : "distancia.calculada",
+        spherical : true
+    }
+},
+{ $skip :1 }
+])
