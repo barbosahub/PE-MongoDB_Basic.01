@@ -8,11 +8,12 @@
 
 
 <p align="left">
+  <span> Create table </span><br>
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/create.JPG" width="650">
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/insert.JPG" width="650">
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/update.JPG" width="650">
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/updateinsert.JPG" width="650">
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/delete" width="650">
+  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/delete.JPG" width="650">
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/coordinates.JPG" width="650">
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/table.JPG" width="350">
 </p>
