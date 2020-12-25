@@ -8,13 +8,19 @@
 
 
 <p align="left">
-  <span> Create table </span><br>
+  <span> Criando a tabela/collection aluno </span><br>
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/create.JPG" width="650">
+  <span> Realizando insert na tabela aluno </span><br>
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/insert.JPG" width="650">
+  <span> Realizando update na tabela aluno </span><br>
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/update.JPG" width="650">
+  <span> Realizando update na tabela aluno e inserindo novos campos/colunas </span><br>
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/updateinsert.JPG" width="650">
+  <span> Realizando delete na tabela aluno </span><br>
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/delete.JPG" width="650">
+  <span> Realizando busca por proximidade com coordinates </span><br>
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/coordinates.JPG" width="650">
+  <span> Collection </span><br>
   <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/table.JPG" width="350">
 </p>
 
