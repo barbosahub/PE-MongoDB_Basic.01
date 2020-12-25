@@ -27,7 +27,7 @@
 ## Sobre
 [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/barbosahub)](https://github.com/barbosahub)
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/brui/)](https://www.linkedin.com/in/brui/)
-[![Linkedin Badge](https://img.shields.io/badge/Curso-Alura-yellow?style=flat-square&logo=&logoColor=white&link=https://cursos.alura.com.br/course/introducao-postgresql-primeiros-passos)](https://cursos.alura.com.br/course/introducao-postgresql-primeiros-passos)
+[![Linkedin Badge](https://img.shields.io/badge/Curso-Alura-yellow?style=flat-square&logo=&logoColor=white&link=https://cursos.alura.com.br/course/mongodbpassos)](https://cursos.alura.com.br/course/mongodb)
 
 ```sh
 Código desenvolvido para fins educativos.
