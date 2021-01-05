@@ -9,19 +9,19 @@
 
 <p align="left">
   <span> Criando a tabela/collection aluno </span><br>
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/create.JPG" width="650">
+  <img src="https://github.com/barbosahub/ImageRepository/blob/master/PE-MongoDB_Basic.01/create.JPG" width="700">
   <br><span> Realizando insert na tabela aluno </span><br>
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/insert.JPG" width="650">
+  <img src="https://github.com/barbosahub/ImageRepository/blob/master/PE-MongoDB_Basic.01/insert.JPG" width="700">
   <br><span> Realizando update na tabela aluno </span><br>
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/update.JPG" width="650">
+  <img src="https://github.com/barbosahub/ImageRepository/blob/master/PE-MongoDB_Basic.01/update.JPG" width="700">
   <br><span> Realizando update na tabela aluno e inserindo novos campos/colunas </span><br>
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/updateinsert.JPG" width="650">
+  <img src="https://github.com/barbosahub/ImageRepository/blob/master/PE-MongoDB_Basic.01/updateinsert.JPG" width="700">
   <br><span> Realizando delete na tabela aluno </span><br>
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/delete.JPG" width="650">
+  <img src="https://github.com/barbosahub/ImageRepository/blob/master/PE-MongoDB_Basic.01/delete.JPG" width="700">
   <br><span> Realizando busca por proximidade com coordinates </span><br>
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/coordinates.JPG" width="650">
+  <img src="https://github.com/barbosahub/ImageRepository/blob/master/PE-MongoDB_Basic.01/coordinates.JPG" width="700">
   <br><span> Diagram</span><br>
-  <img src="https://github.com/barbosahub/PE-MongoDB_Basic.01/blob/main/Images/table.JPG" width="350">
+  <img src="https://github.com/barbosahub/ImageRepository/blob/master/PE-MongoDB_Basic.01/table.JPG" width="350">
 </p>
 
 ## Sobre
